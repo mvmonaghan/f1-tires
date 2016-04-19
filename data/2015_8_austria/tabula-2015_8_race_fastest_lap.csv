@@ -1,0 +1,22 @@
+POS,NO ,DRIVER ,NAT ,ENTRANT ,TIME,ON,GAP ,"",KPH,TIME OF DAY
+1 ,6 ,N. ROSBERG ,GER ,Mercedes AMG Petronas F1 Team ,1:11.235 ,35 ,"","",218.622 ,14:49:58
+2 ,44 ,L. HAMILTON ,GBR ,Mercedes AMG Petronas F1 Team ,1:11.475 ,60 ,0.240 ,0.024,217.888 ,15:20:02
+3 ,5 ,S. VETTEL ,GER ,Scuderia Ferrari ,1:11.499 ,44 ,0.264 ,0.114,217.815 ,15:01:11
+4 ,19 ,F. MASSA ,BRA ,Williams Martini Racing ,1:11.613 ,58 ,0.378 ,0.076,217.468 ,15:17:54
+5 ,3 ,D. RICCIARDO ,AUS ,Infiniti Red Bull Racing ,1:11.689 ,69 ,0.454 ,0.096,217.238 ,15:32:20
+6 ,13 ,P. MALDONADO ,VEN ,Lotus F1 Team ,1:11.785 ,58 ,0.550 ,"",216.947 ,15:18:37
+"","","","","","","","",0.463,"",""
+7 ,77 ,V. BOTTAS ,FIN ,Williams Martini Racing ,1:12.248 ,52 ,1.013 ,0.068,215.557 ,15:11:05
+8 ,26 ,D. KVYAT ,RUS ,Infiniti Red Bull Racing ,1:12.316 ,54 ,1.081 ,0.033,215.354 ,15:14:26
+9 ,33 ,M. VERSTAPPEN ,NED ,Scuderia Toro Rosso ,1:12.349 ,64 ,1.114 ,0.028,215.256 ,15:25:51
+10 ,11 ,S. PEREZ ,MEX ,Sahara Force India F1 Team ,1:12.377 ,58 ,1.142 ,0.139,215.173 ,15:18:53
+11 ,9 ,M. ERICSSON ,SWE ,Sauber F1 Team ,1:12.516 ,56 ,1.281 ,0.025,214.760 ,15:18:01
+12 ,27 ,N. HULKENBERG ,GER ,Sahara Force India F1 Team ,1:12.541 ,62 ,1.306 ,0.340,214.686 ,15:23:19
+13 ,8 ,R. GROSJEAN ,FRA ,Lotus F1 Team ,1:12.881 ,34 ,1.646 ,"",213.685 ,14:49:24
+"","","","","","","","",0.169,"",""
+14 ,12 ,F. NASR ,BRA ,Sauber F1 Team ,1:13.050 ,57 ,1.815 ,0.184,213.190 ,15:17:49
+15 ,55 ,C. SAINZ ,ESP ,Scuderia Toro Rosso ,1:13.234 ,28 ,1.999 ,"",212.655 ,14:42:10
+"","","","","","","","",1.705,"",""
+16 ,98 ,R. MERHI ,ESP ,Manor Marussia F1 Team ,1:14.939 ,58 ,3.704 ,"",207.817 ,15:21:05
+"","","","","","","","",37.269,"",""
+17 ,22 ,J. BUTTON ,GBR ,McLaren Honda ,1:52.208 ,5 ,40.973 ,"",138.792 ,14:13:00

@@ -1,0 +1,30 @@
+POS,NO ,DRIVER ,NAT ,ENTRANT ,TIME,ON,GAP ,"",KPH,TIME OF DAY
+1 ,6 ,N. ROSBERG ,GER ,Mercedes AMG Petronas F1 Team ,1:40.666 ,49 ,"","",197.154 ,15:42:51
+2 ,44 ,L. HAMILTON ,GBR ,Mercedes AMG Petronas F1 Team ,1:40.738 ,48 ,0.072 ,"",197.014 ,15:41:08
+"","","","","","","","",0.592,"",""
+3 ,5 ,S. VETTEL ,GER ,Scuderia Ferrari ,1:41.330 ,52 ,0.664 ,0.650,195.863 ,15:47:57
+4 ,3 ,D. RICCIARDO ,AUS ,Infiniti Red Bull Racing ,1:41.980 ,53 ,1.314 ,"",194.614 ,15:50:25
+"","","","","","","","",0.680,"",""
+5 ,55 ,C. SAINZ ,ESP ,Scuderia Toro Rosso ,1:42.660 ,51 ,1.994 ,0.189,193.325 ,15:46:32
+6 ,13 ,P. MALDONADO ,VEN ,Lotus F1 Team ,1:42.849 ,51 ,2.183 ,"",192.970 ,15:46:34
+"","","","","","","","",0.161,"",""
+7 ,11 ,S. PEREZ ,MEX ,Sahara Force India F1 Team ,1:43.010 ,54 ,2.344 ,0.016,192.668 ,15:51:40
+8 ,22 ,J. BUTTON ,GBR ,McLaren Honda ,1:43.026 ,50 ,2.360 ,0.146,192.638 ,15:44:48
+9 ,33 ,M. VERSTAPPEN ,NED ,Scuderia Toro Rosso ,1:43.172 ,51 ,2.506 ,0.556,192.366 ,15:46:25
+10 ,26 ,D. KVYAT ,RUS ,Infiniti Red Bull Racing ,1:43.728 ,41 ,3.062 ,"",191.335 ,15:26:42
+"","","","","","","","",0.595,"",""
+11 ,14 ,F. ALONSO ,ESP ,McLaren Honda ,1:44.323 ,55 ,3.657 ,0.084,190.243 ,15:53:52
+12 ,12 ,F. NASR ,BRA ,Sauber F1 Team ,1:44.407 ,54 ,3.741 ,"",190.090 ,15:51:51
+"","","","","","","","",0.688,"",""
+13 ,27 ,N. HULKENBERG ,GER ,Sahara Force India F1 Team ,1:45.095 ,24 ,4.429 ,"",188.846 ,14:51:32
+"","","","","","","","",1.091,"",""
+14 ,7 ,K. RAIKKONEN ,FIN ,Scuderia Ferrari ,1:46.186 ,24 ,5.520 ,"",186.905 ,14:52:59
+"","","","","","","","",1.195,"",""
+15 ,9 ,M. ERICSSON ,SWE ,Sauber F1 Team ,1:47.381 ,24 ,6.715 ,"",184.825 ,14:52:37
+"","","","","","","","",0.792,"",""
+16 ,53 ,A. ROSSI ,USA ,Manor Marussia F1 Team ,1:48.173 ,50 ,7.507 ,0.058,183.472 ,15:45:05
+17 ,19 ,F. MASSA ,BRA ,Williams Martini Racing ,1:48.231 ,22 ,7.565 ,"",183.374 ,14:48:12
+"","","","","","","","",11.381,"",""
+18 ,8 ,R. GROSJEAN ,FRA ,Lotus F1 Team ,1:59.612 ,8 ,18.946 ,"",165.926 ,14:21:42
+"","","","","","","","",32.327,"",""
+19 ,77 ,V. BOTTAS ,FIN ,Williams Martini Racing ,2:31.939 ,3 ,51.273 ,"",130.623 ,14:11:38

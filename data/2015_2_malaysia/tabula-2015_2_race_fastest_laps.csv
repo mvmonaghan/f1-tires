@@ -1,0 +1,25 @@
+POS,NO ,DRIVER ,NAT ,ENTRANT ,TIME,ON,GAP ,"",KPH,TIME OF DAY
+1 ,6 ,N. ROSBERG ,GER ,Mercedes AMG Petronas F1 Team ,1:42.062 ,43 ,"","",195.516 ,16:22:26
+2 ,44 ,L. HAMILTON ,GBR ,Mercedes AMG Petronas F1 Team ,1:43.125 ,45 ,1.063 ,0.523,193.501 ,16:25:40
+3 ,5 ,S. VETTEL ,GER ,Scuderia Ferrari ,1:43.648 ,46 ,1.586 ,0.254,192.524 ,16:27:13
+4 ,12 ,F. NASR ,BRA ,Sauber F1 Team ,1:43.902 ,45 ,1.840 ,0.088,192.054 ,16:27:39
+5 ,19 ,F. MASSA ,BRA ,Williams Martini Racing ,1:43.990 ,40 ,1.928 ,"",191.891 ,16:17:47
+"","","","","","","","",0.098,"",""
+6 ,77 ,V. BOTTAS ,FIN ,Williams Martini Racing ,1:44.088 ,42 ,2.026 ,0.036,191.710 ,16:21:20
+7 ,7 ,K. RAIKKONEN ,FIN ,Scuderia Ferrari ,1:44.124 ,40 ,2.062 ,0.390,191.644 ,16:17:30
+8 ,26 ,D. KVYAT ,RUS ,Infiniti Red Bull Racing ,1:44.514 ,41 ,2.452 ,0.065,190.929 ,16:20:06
+9 ,33 ,M. VERSTAPPEN ,NED ,Scuderia Toro Rosso ,1:44.579 ,42 ,2.517 ,0.233,190.810 ,16:21:39
+10 ,8 ,R. GROSJEAN ,FRA ,Lotus F1 Team ,1:44.812 ,36 ,2.750 ,0.010,190.386 ,16:11:22
+11 ,27 ,N. HULKENBERG ,GER ,Sahara Force India F1 Team ,1:44.822 ,46 ,2.760 ,"",190.368 ,16:29:37
+"","","","","","","","",0.248,"",""
+12 ,13 ,P. MALDONADO ,VEN ,Lotus F1 Team ,1:45.070 ,38 ,3.008 ,0.242,189.919 ,16:15:01
+13 ,3 ,D. RICCIARDO ,AUS ,Infiniti Red Bull Racing ,1:45.312 ,42 ,3.250 ,0.033,189.482 ,16:21:43
+14 ,11 ,S. PEREZ ,MEX ,Sahara Force India F1 Team ,1:45.345 ,37 ,3.283 ,0.162,189.423 ,16:13:19
+15 ,55 ,C. SAINZ ,ESP ,Scuderia Toro Rosso ,1:45.507 ,37 ,3.445 ,"",189.132 ,16:12:46
+"","","","","","","","",0.549,"",""
+16 ,22 ,J. BUTTON ,GBR ,McLaren Honda ,1:46.056 ,38 ,3.994 ,"",188.153 ,16:14:57
+"","","","","","","","",2.404,"",""
+17 ,14 ,F. ALONSO ,ESP ,McLaren Honda ,1:48.460 ,17 ,6.398 ,0.300,183.983 ,15:36:24
+18 ,9 ,M. ERICSSON ,SWE ,Sauber F1 Team ,1:48.760 ,3 ,6.698 ,"",183.475 ,15:09:09
+"","","","","","","","",0.280,"",""
+19 ,98 ,R. MERHI ,ESP ,Manor Marussia F1 Team ,1:49.040 ,44 ,6.978 ,"",183.004 ,16:28:36
