@@ -1,0 +1,51 @@
+NO ,DRIVER ,ENTRANT ,LAP,TIME OF DAY,S,T  OP,"",DURATION ,TOTAL TIME
+3 ,D. RICCIARDO ,Infiniti Red Bull Racing ,3 ,14:07:06 ,"",1 ,"",23.937 ,23.937
+27 ,N. HULKENBERG ,Sahara Force India F1 Team ,9 ,14:14:48 ,"",1 ,"",24.009 ,24.009
+26 ,D. KVYAT ,Infiniti Red Bull Racing ,10 ,14:16:04 ,"",1 ,"",24.155 ,24.155
+19 ,F. MASSA ,Williams Martini Racing ,10 ,14:16:08 ,"",1 ,"",23.887 ,23.887
+11 ,S. PEREZ ,Sahara Force India F1 Team ,10 ,14:16:10 ,"",1 ,"",23.854 ,23.854
+8 ,R. GROSJEAN ,Lotus F1 Team ,10 ,14:16:12 ,"",1 ,"",24.475 ,24.475
+77 ,V. BOTTAS ,Williams Martini Racing ,11 ,14:17:18 ,"",1 ,"",23.736 ,23.736
+33 ,M. VERSTAPPEN ,Scuderia Toro Rosso ,11 ,14:17:28 ,"",1 ,"",24.166 ,24.166
+7 ,K. RAIKKONEN ,Scuderia Ferrari ,12 ,14:18:31 ,"",1 ,"",23.293 ,23.293
+22 ,J. BUTTON ,McLaren Honda ,12 ,14:18:53 ,"",1 ,"",23.242 ,23.242
+9 ,M. ERICSSON ,Sauber F1 Team ,12 ,14:18:58 ,"",1 ,"",24.699 ,24.699
+6 ,N. ROSBERG ,Mercedes AMG Petronas F1 Team ,13 ,14:19:39 ,"",1 ,"",25.039 ,25.039
+5 ,S. VETTEL ,Scuderia Ferrari ,13 ,14:19:44 ,"",1 ,"",23.801 ,23.801
+14 ,F. ALONSO ,McLaren Honda ,13 ,14:20:14 ,"",1 ,"",22.981 ,22.981
+44 ,L. HAMILTON ,Mercedes AMG Petronas F1 Team ,14 ,14:20:57 ,"",1 ,"",24.328 ,24.328
+12 ,F. NASR ,Sauber F1 Team ,14 ,14:21:27 ,"",1 ,"",25.529 ,25.529
+53 ,A. ROSSI ,Manor Marussia F1 Team ,14 ,14:22:03 ,"",1 ,"",25.492 ,25.492
+28 ,W. STEVENS ,Manor Marussia F1 Team ,15 ,14:23:24 ,"",1 ,"",25.547 ,25.547
+13 ,P. MALDONADO ,Lotus F1 Team ,25 ,14:36:04 ,"",1 ,"",24.115 ,24.115
+3 ,D. RICCIARDO ,Infiniti Red Bull Racing ,28 ,14:40:10 ,"",2 ,"",23.979 ,47.916
+22 ,J. BUTTON ,McLaren Honda ,31 ,14:44:10 ,"",2 ,"",24.265 ,47.507
+5 ,S. VETTEL ,Scuderia Ferrari ,32 ,14:44:26 ,"",2 ,"",23.474 ,47.275
+6 ,N. ROSBERG ,Mercedes AMG Petronas F1 Team ,33 ,14:45:33 ,"",2 ,"",23.321 ,48.360
+14 ,F. ALONSO ,McLaren Honda ,32 ,14:45:34 ,"",2 ,"",23.218 ,46.199
+9 ,M. ERICSSON ,Sauber F1 Team ,32 ,14:45:52 ,"",2 ,"",29.148 ,53.847
+11 ,S. PEREZ ,Sahara Force India F1 Team ,33 ,14:46:36 ,"",2 ,"",23.609 ,47.463
+44 ,L. HAMILTON ,Mercedes AMG Petronas F1 Team ,34 ,14:46:52 ,"",2 ,"",23.148 ,47.476
+NO ,DRIVER ,ENTRANT ,LAP,TIME OF DAY,S,T  OP,"",DURATION ,TOTAL TIME
+33 ,M. VERSTAPPEN ,Scuderia Toro Rosso ,34 ,14:47:52 ,"",2 ,"",24.153 ,48.319
+27 ,N. HULKENBERG ,Sahara Force India F1 Team ,35 ,14:48:59 ,"",2 ,"",24.199 ,48.208
+8 ,R. GROSJEAN ,Lotus F1 Team ,35 ,14:49:12 ,"",2 ,"",23.787 ,48.262
+19 ,F. MASSA ,Williams Martini Racing ,38 ,14:53:00 ,"",2 ,"",23.927 ,47.814
+26 ,D. KVYAT ,Infiniti Red Bull Racing ,39 ,14:54:15 ,"",2 ,"",23.630 ,47.785
+12 ,F. NASR ,Sauber F1 Team ,39 ,14:54:38 ,"",2 ,"",24.491 ,50.020
+77 ,V. BOTTAS ,Williams Martini Racing ,41 ,14:56:37 ,"",2 ,"",24.913 ,48.649
+28 ,W. STEVENS ,Manor Marussia F1 Team ,40 ,14:57:45 ,"",2 ,"",27.095 ,52.642
+53 ,A. ROSSI ,Manor Marussia F1 Team ,41 ,14:59:12 ,"",2 ,"",26.706 ,52.198
+13 ,P. MALDONADO ,Lotus F1 Team ,44 ,15:01:06 ,"",2 ,"",30.082 ,54.197
+7 ,K. RAIKKONEN ,Scuderia Ferrari ,46 ,15:02:43 ,"",2 ,"",25.308 ,48.601
+5 ,S. VETTEL ,Scuderia Ferrari ,47 ,15:03:48 ,"",3 ,"",23.861 ,1:11.136
+6 ,N. ROSBERG ,Mercedes AMG Petronas F1 Team ,48 ,15:04:53 ,"",3 ,"",23.046 ,1:11.406
+44 ,L. HAMILTON ,Mercedes AMG Petronas F1 Team ,49 ,15:06:11 ,"",3 ,"",22.936 ,1:10.412
+11 ,S. PEREZ ,Sahara Force India F1 Team ,51 ,15:10:22 ,"",3 ,"",23.732 ,1:11.195
+22 ,J. BUTTON ,McLaren Honda ,51 ,15:10:27 ,"",3 ,"",23.402 ,1:10.909
+3 ,D. RICCIARDO ,Infiniti Red Bull Racing ,52 ,15:11:38 ,"",3 ,"",24.775 ,1:12.691
+14 ,F. ALONSO ,McLaren Honda ,52 ,15:11:48 ,"",3 ,"",23.810 ,1:10.009
+33 ,M. VERSTAPPEN ,Scuderia Toro Rosso ,53 ,15:12:51 ,"",3 ,"",24.078 ,1:12.397
+9 ,M. ERICSSON ,Sauber F1 Team ,53 ,15:13:28 ,"",3 ,"",25.102 ,1:18.949
+8 ,R. GROSJEAN ,Lotus F1 Team ,54 ,15:14:07 ,"",3 ,"",23.958 ,1:12.220
+19 ,F. MASSA ,Williams Martini Racing ,55 ,15:15:12 ,"",3 ,"",23.401 ,1:11.215
