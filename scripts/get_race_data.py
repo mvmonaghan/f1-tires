@@ -2,56 +2,62 @@ import pandas as pd
 import numpy as np
 import datetime
 import os
+from f1_scripts import (assign_lap,
+                        get_tires,
+                        get_sector_times,
+                        convert_time,
+                        get_avg_lap)
 
+# Load driver list as GLOBAL variable
+DRIVER_LIST = pd.read_csv('data/drivers.csv')
 
-def assign_lap(df):
-    df['LAP'] = 1
-    cols = ['NO', 'GAP', 'TIME', 'LAP']
-    drivers = df[0].unique()
-    data = df.values
-    for driver in drivers:
-        data[data[:,0] == driver, 3] = data[data[:,0] == driver, 3].cumsum()
-    return pd.DataFrame(data=data, columns=cols)
+def create_race_features(filename):
+    year, race_num, track = filename.split('_')
+    # Load lap times for all drivers
+    lap_data = pd.read_csv('data/lap_history/{filename}_lap_history.csv'.format(filename=filename), header=None)
+    lap_times = assign_lap(lap_data)
+    lap_times['TIME'] = convert_time(lap_times['TIME'])
+    lap_times.sort_values(by=['NO', 'LAP'], inplace=True)
 
-def get_strategies(df):
-    arr = df.values
-    all_strategies = []
-    for row in arr:
-        strategy = [row[0]]
-        for item in row[1:]:
-            try:
-                tire, laps = item.split()
-                laps = int(laps.replace('(', '').replace(')', ''))
-                stint = []
-                for i in xrange(laps):
-                    stint.append(tire)
-                strategy.extend(stint)
-            except:
-                pass
-        all_strategies.append(strategy)
-    df = pd.DataFrame(data=all_strategies)
-    column_names = ['NAME']
-    column_names.extend([i for i in xrange(1, df.shape[1])])
-    df.columns = column_names
-    merged = pd.merge(driver_list, df, on='NAME')
-    return merged.drop(['NAME', 'DRIVER'], axis=1)
+    # Load Tire strategy data
+    tire_data = pd.read_csv('data/tire_strategy/{filename}.csv'.format(filename=filename))
+    tire_strat = get_tires(tire_data)
+
+    # Join Driver, Name, No. to tire data and sort by No.
+    tire_strat = pd.merge(DRIVER_LIST, tire_strat, on='NAME')
+    tire_strat.drop(['NAME', 'DRIVER'], axis=1, inplace=True)
+
+    # Append tire data to lap data
+    mask = tire_strat.iloc[:,1:].notnull().values
+    lap_times['TIRE'] = tire_strat[tire_strat.columns[1:]].values[mask].flatten()
+    lap_times['TRACK'] = track
+    lap_times['YEAR'] = year
+    lap_times['RACE'] = race_num
+
+    return lap_times
+
 
 
 if __name__ == '__main__':
-    # Load driver list for particular season
-    driver_list = pd.read_csv('data/2016_drivers.csv')
+    # Create a list of the available races to date that we can use for training
+    races = os.listdir('data/fia')
+    races = races[1:]
+    # Remove bahrain 2015 until data is fixed
+    races.pop(13)
 
-    # Load lap times for all drivers
-    df = pd.read_csv('data/2016_1_austrailia/history_test.csv', header=None)
-    df = assign_lap(df)
-    df.sort_values(by=['NO', 'LAP'], inplace=True)
 
-    # Convert lap time to seconds
-    df['TIME'] = df['TIME'].apply(lambda x: x.strip())
-    df['TIME'] = df['TIME'].apply(lambda x: datetime.datetime.strptime(x,'%M:%S.%f'))
-    df['timedelta'] = df.TIME - datetime.datetime.strptime('00:00.0','%M:%S.%f')
-    df['secs'] = df['timedelta'].apply(lambda x: x / np.timedelta64(1, 's'))
+    # Create DataFrame of all laps for all drivers in all races
+    list_of_times = []
+    for race in races:
+        lap_times = create_race_features(race)
+        list_of_times.append(lap_times)
+        print '{} complete.'.format(race)
+    all_lap_times = pd.concat(list_of_times)
+    print all_lap_times.shape
 
-    # Load Tire strategy data
-    tire_data = pd.read_csv('data/2016_1_austrailia/2016_1_tires.csv')
-    tire_strat = get_strategies(tire_data)
+    # # Load Track Data
+    # tracks = pd.read_csv('data/track_profiles - Sheet1.csv')
+    # tracks.drop('LAPS', axis=1, inplace=True)
+    #
+    # # Create full feature dataframe
+    # lap_features.merge(tracks, how='left', on=['TRACK', 'YEAR'])

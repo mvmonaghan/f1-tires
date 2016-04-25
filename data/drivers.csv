@@ -1,4 +1,4 @@
-NAME,DRIVER, NO
+NAME,DRIVER,NO
 Daniel Ricciardo,D. RICCIARDO,3
 Sebastian Vettel,S. VETTEL,5
 Nico Rosberg,N. ROSBERG,6
@@ -12,7 +12,7 @@ Felipe Massa,F. MASSA,19
 Kevin Magnussen,K. MAGNUSSEN,20
 Esteban Gutierrez,E. GUTIERREZ,21
 Jenson Button,J. BUTTON,22
-Daniel Kvyat,D. KVYAT,26
+Daniil Kvyat,D. KVYAT,26
 Nico Hulkenberg,N. HULKENBERG,27
 Jolyon Palmer,J. PALMER,30
 Max Verstappen,M. VERSTAPPEN,33
@@ -22,3 +22,7 @@ Valtteri Bottas,V. BOTTAS,77
 Rio Haryanto,R. HARYANTO,88
 Pascal Wehrlein,P. WEHRLEIN,94
 Stoffel Vandoorne,S. VANDOORNE,41
+Pastor Maldonado,P. MALDONADO,13
+Roberto Merhi,R. MERHI,98
+Alexander Rossi,A. ROSSI,53
+Will Stevens,W. STEVENS,28
