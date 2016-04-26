@@ -2,11 +2,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import os
-from f1_scripts import (assign_lap,
-                        get_tires,
-                        get_sector_times,
-                        convert_time,
-                        get_avg_lap)
+import f1_scripts as f1
 
 # Load driver list as GLOBAL variable
 DRIVER_LIST = pd.read_csv('data/drivers.csv')
@@ -15,13 +11,13 @@ def create_race_features(filename):
     year, race_num, track = filename.split('_')
     # Load lap times for all drivers
     lap_data = pd.read_csv('data/lap_history/{filename}_lap_history.csv'.format(filename=filename), header=None)
-    lap_times = assign_lap(lap_data)
-    lap_times['TIME'] = convert_time(lap_times['TIME'])
+    lap_times = f1.assign_lap(lap_data)
+    lap_times['TIME'] = f1.convert_time(lap_times['TIME'])
     lap_times.sort_values(by=['NO', 'LAP'], inplace=True)
 
     # Load Tire strategy data
     tire_data = pd.read_csv('data/tire_strategy/{filename}.csv'.format(filename=filename))
-    tire_strat = get_tires(tire_data)
+    tire_strat = f1.get_tires(tire_data)
 
     # Join Driver, Name, No. to tire data and sort by No.
     tire_strat = pd.merge(DRIVER_LIST, tire_strat, on='NAME')
@@ -53,11 +49,19 @@ if __name__ == '__main__':
         list_of_times.append(lap_times)
         print '{} complete.'.format(race)
     all_lap_times = pd.concat(list_of_times)
-    print all_lap_times.shape
+    all_lap_times['YEAR'] = all_lap_times['YEAR'].astype(int)
 
-    # # Load Track Data
-    # tracks = pd.read_csv('data/track_profiles - Sheet1.csv')
-    # tracks.drop('LAPS', axis=1, inplace=True)
-    #
-    # # Create full feature dataframe
-    # lap_features.merge(tracks, how='left', on=['TRACK', 'YEAR'])
+
+    # Load Track Data
+    track_data = pd.read_csv('data/track_profiles.csv')
+    tracks = track_data.drop('LAPS', axis=1)
+    tracks['TRACK'] = tracks['TRACK'].apply(lambda x: x.lower())
+
+    # aggregate lap time by race, driver, and tire type to calculate average times
+    grouped = all_lap_times.drop(['GAP', 'LAP', 'RACE'], axis=1).groupby(['NO', 'TIRE', 'TRACK', 'YEAR'], as_index=False)
+    avg_laps = pd.merge(grouped.count(), grouped.mean(), how='left', on=['NO', 'TIRE', 'TRACK', 'YEAR'])
+    avg_laps.columns = ['NO', 'TIRE', 'TRACK', 'YEAR', 'COUNT', 'TIME_AVG']
+
+
+    # Create full feature dataframe
+    lap_features.merge(tracks, how='left', on=['TRACK', 'YEAR'])
