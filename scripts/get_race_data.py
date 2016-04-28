@@ -38,8 +38,7 @@ if __name__ == '__main__':
     # Create a list of the available races to date that we can use for training
     races = os.listdir('data/fia')
     races = races[1:]
-    # Remove bahrain 2015 until data is fixed
-    races.pop(13)
+    
 
 
     # Create DataFrame of all laps for all drivers in all races

@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import os
+from collections import defaultdict
 
 def assign_lap(df):
     df['LAP'] = 1
@@ -57,3 +58,51 @@ def get_avg_lap(df):
     avg_laps = pd.merge(grouped.count(), grouped.mean(), how='left', on=['NO', 'TIRE', 'TRACK', 'YEAR'])
     avg_laps.columns = ['NO', 'TIRE', 'TRACK', 'YEAR', 'COUNT', 'TIME']
     return avg_laps
+
+def assign_safety(track, year, lap):
+    safety_car = {'australia': {2015: {1,2,3},
+                                2016: {17}},
+                  'china': {2015: {54,55,56},
+                            2016: {4,5,6,7,8}},
+                  'hungary': {2015: {43,44,45,46,47,48}},
+                  'belgium': {2015: {20,21}},
+                  'singapore': {2015: {13,14,15,16,17,18,37,38,39,40}},
+                  'russia': {2015: {1,2,3,12,13,14,15,16}},
+                  'usa': {2015: {5,6,7,27,28,29,30,31,32,37,38,39,43,44,45,46}},
+                  'mexico': {2015: {52,53,54,55,56,57}},
+                  'malaysia': {2015: {4,5,6}},
+                  'monaco': {2015: {63,64,65,66,67,68,69,70}},
+                  'austria': {2015: {1,2,3,4,5,6}},
+                  'britain': {2015: {1,2,3,33,34}},
+                  }
+    if track in safety_car:
+        if lap in safety_car[track][year]:
+            return 1
+        else:
+            return 0
+    else:
+        return 0
+
+def get_stints(df):
+    previous = None
+    laps = []
+    times = []
+    tires = []
+    stint = defaultdict(list)
+    for row in df.iterrows():
+        if row[1]['GAP'] == 'PIT':
+            stint[row[1]['NO']].append((laps, times, tire))
+            laps = []
+            times = []
+            tires = []
+        elif previous == 'PIT':
+            pass
+        else:
+            laps.append(row[1]['LAP'])
+            times.append(row[1]['TIME'])
+            tire.append(row[1]['TIRE'])
+        previous = row[1]['GAP']
+    return stint
+
+def plot_stints(stint):
+    pass
