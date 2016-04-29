@@ -113,28 +113,33 @@ def load_tracks(features=True):
     tracks['TRACK'] = tracks['TRACK'].apply(lambda x: x.lower())
     return tracks
 
+def load_drivers():
+    # Load driver list as GLOBAL variable
+    return pd.read_csv('data/drivers.csv')
+
 def create_race_features(filename):
     year, race_num, track = filename.split('_')
     # Load lap times for all drivers
     lap_data = pd.read_csv('data/lap_history/{filename}_lap_history.csv'.format(filename=filename), header=None)
-    lap_times = f1.assign_lap(lap_data)
-    lap_times['TIME'] = f1.convert_time(lap_times['TIME'])
+    lap_times = assign_lap(lap_data)
+    lap_times['TIME'] = convert_time(lap_times['TIME'])
     lap_times.sort_values(by=['NO', 'LAP'], inplace=True)
-
+    lap_times['LAP'] = lap_times['LAP'].astype(int)
     # Load Tire strategy data
     tire_data = pd.read_csv('data/tire_strategy/{filename}.csv'.format(filename=filename))
-    tire_strat = f1.get_tires(tire_data)
-
+    tire_strat = get_tires(tire_data)
+    # Load Driver list
+    driver_list = load_drivers()
     # Join Driver, Name, No. to tire data and sort by No.
-    tire_strat = pd.merge(DRIVER_LIST, tire_strat, on='NAME')
+    tire_strat = pd.merge(driver_list, tire_strat, on='NAME')
     tire_strat.drop(['NAME', 'DRIVER'], axis=1, inplace=True)
-
     # Append tire data to lap data
     mask = tire_strat.iloc[:,1:].notnull().values
     lap_times['TIRE'] = tire_strat[tire_strat.columns[1:]].values[mask].flatten()
     lap_times['TRACK'] = track
-    lap_times['YEAR'] = year
+    lap_times['YEAR'] = int(year)
     lap_times['RACE'] = race_num
+    lap_times['GAP'] = lap_times['GAP'].apply(lambda x: x.strip())
     return lap_times
 
 def assign_stint_lap(df):
