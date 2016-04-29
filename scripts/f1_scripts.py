@@ -104,5 +104,76 @@ def get_stints(df):
         previous = row[1]['GAP']
     return stint
 
-def plot_stints(stint):
-    pass
+def load_tracks(features=True):
+    if features:
+        tracks = pd.read_csv('data/track_features.csv')
+    else:
+        tracks = pd.read_csv('data/track_history.csv')
+    tracks.drop('LAPS', axis=1, inplace=True)
+    tracks['TRACK'] = tracks['TRACK'].apply(lambda x: x.lower())
+    return tracks
+
+def create_race_features(filename):
+    year, race_num, track = filename.split('_')
+    # Load lap times for all drivers
+    lap_data = pd.read_csv('data/lap_history/{filename}_lap_history.csv'.format(filename=filename), header=None)
+    lap_times = f1.assign_lap(lap_data)
+    lap_times['TIME'] = f1.convert_time(lap_times['TIME'])
+    lap_times.sort_values(by=['NO', 'LAP'], inplace=True)
+
+    # Load Tire strategy data
+    tire_data = pd.read_csv('data/tire_strategy/{filename}.csv'.format(filename=filename))
+    tire_strat = f1.get_tires(tire_data)
+
+    # Join Driver, Name, No. to tire data and sort by No.
+    tire_strat = pd.merge(DRIVER_LIST, tire_strat, on='NAME')
+    tire_strat.drop(['NAME', 'DRIVER'], axis=1, inplace=True)
+
+    # Append tire data to lap data
+    mask = tire_strat.iloc[:,1:].notnull().values
+    lap_times['TIRE'] = tire_strat[tire_strat.columns[1:]].values[mask].flatten()
+    lap_times['TRACK'] = track
+    lap_times['YEAR'] = year
+    lap_times['RACE'] = race_num
+    return lap_times
+
+def assign_stint_lap(df):
+    df['STINT_LAP'] = 1
+    idx = df[df['GAP'] == 'PIT'].index
+    start = 0
+    for val in idx:
+        df['STINT_LAP'].ix[start:val] = df.ix[start:val]['STINT_LAP'].cumsum()
+        start = val + 1
+    end = df.index[-1]
+    df['STINT_LAP'].ix[start:end] = df.ix[start:end]['STINT_LAP'].cumsum()
+    return df
+
+def remove_pits(df):
+    idx = []
+    previous = None
+    for row in df.iterrows():
+        if row[1]['GAP'] == 'PIT' or previous == 'PIT':
+            idx.append(row[0])
+        previous = row[1]['GAP']
+    return df.drop(idx, axis=0)
+
+def plot_drivers(df, race):
+    sn.set_style(style='whitegrid')
+    year, race_num, track = race.split('_')
+    this_race = df[(df['TRACK'] == track) & (df['YEAR'] == int(year))]
+    for num in this_race['NO'].unique():
+        driver_idx = this_race['NO'] == num
+        plt.figure(figsize=(12,6))
+        plt.title('{} {} - Driver No. {}'.format(track.upper(), year, num))
+        plt.xlim([0, this_race['LAP'].max() + 1])
+        plt.scatter(this_race['LAP'][driver_idx], this_race['TIME'][driver_idx], c=this_race['TIRE'][driver_idx].apply(assign_color), alpha=1)
+    plt.show()
+
+def plot_race(df, race):
+    year, race_num, track = race.split('_')
+    this_race = df[(df['TRACK'] == track) & (df['YEAR'] == int(year))]
+    plt.figure(figsize=(12,6))
+    plt.title('{} {}'.format(track.upper(), year))
+    plt.xlim([0, this_race['LAP'].max() + 1])
+    plt.scatter(this_race['LAP'], this_race['TIME'], c=this_race['TIRE'].apply(assign_color), alpha=.5)
+    plt.show()
