@@ -86,15 +86,15 @@ The predicted values from the High Tire Wear model now show the tire wear trends
 
 1. Tune logistic regression step  
 
-Upon further EDA, it looks like the two most important factors in identifying Low Tire Wear Grand Prix are cool temperatures and low downforce. I would like to train the model to include an increasing amount of the edge cases using these parameters and the pick the threshold the maximizes the R^2 score of both the High and Low tire wear models.
+   Upon further EDA, it looks like the two most important factors in identifying Low Tire Wear Grand Prix are cool temperatures and low downforce. I would like to train the model to include an increasing amount of the edge cases using these parameters and the pick the threshold the maximizes the R^2 score of both the High and Low tire wear models.
 
 2. Complete Race Simulator
 
-I have coded the framework of a simulation class.  Once I am happy with the lap time predictions, I plan to complete the Simulator.  The user will be able to give the Simulator a range of strategies, and applying statistical modeling, it will choose the strategy that minimizes the total race time.
+   I have coded the framework of a simulation class.  Once I am happy with the lap time predictions, I plan to complete the Simulator.  The user will be able to give the Simulator a range of strategies, and applying statistical modeling, it will choose the strategy that minimizes the total race time.
 
 3. Create Live Dashboard
 
-I plan to host the simulator on an EC2 instance with a dashboard that shows the optimal race strategy and also gives users the ability to test out the own race strategy theories.
+   I plan to host the simulator on an EC2 instance with a dashboard that shows the optimal race strategy and also gives users the ability to test out the own race strategy theories.
 
 ## References:
 * http://www.fia.com/
